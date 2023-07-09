@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function canAccessFilament(): bool
+    {
+        // return str_ends_with($this->email, '@email.com') && $this->hasVerifiedEmail();
+        return 'admin@email.com';
+    }
 }
